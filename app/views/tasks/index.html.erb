@@ -1,0 +1,17 @@
+
+<h1>All tasks</h1>
+
+<ul></ul>
+<% @tasks.each do |task| %>
+  <li>
+    <% if task.completed %>
+    <i class="fas fa-check"></i> <%= link_to(task.title, task_path(task)) %>
+    <% else %>
+    <i class="fas fa-times"></i> <%= link_to(task.title, task_path(task)) %>
+    <% end %>
+    <%= link_to('<i class="fas fa-trash-alt"></i>'.html_safe, task_path(task),{ method: "delete", data: {confirm: "You sure you want to delete #{task.title}?"}}) %>
+  </li>
+<% end %>
+
+<!-- "/tasks/#{task.id}" -->
+<a href=<%=  %>></a>
